@@ -1,15 +1,14 @@
-
-import RightBar from '../components/RightBar/RightBar'
 import Divider from "../components/Divider/Divider"
 import LeftBar from "../components/LeftBar/LeftBar"
+import RightBar from "../components/RightBar/RightBar"
+
 
 function MainLayout() {
   return (
     <div className="flex relative flex-row w-full min-h-lvh bg-app_bg">
         <LeftBar/>
-        <Divider />
+        <Divider horisontal={false} />
         <RightBar/>
-
     </div>
   )
 }

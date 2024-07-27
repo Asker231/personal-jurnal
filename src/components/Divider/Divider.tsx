@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Divider({horisontal}) {
+function Divider({horisontal}:{horisontal:boolean}) {
     if(horisontal){
         return <div className="w-full h-[1px] bg-hover_cart"></div>
     }

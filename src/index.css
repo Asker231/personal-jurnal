@@ -3,6 +3,17 @@
 @tailwind utilities;
 
 
+@layer components{
+  .HStack{
+    display: flex;
+    align-items: center;
+  }
+  .VStack{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+}
 
 *{
   margin: 0;
