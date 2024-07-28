@@ -1,5 +1,11 @@
 import { FormEvent } from 'react'
 import Divider from '../Divider/Divider'
+
+import {v4} from 'uuid'
+import { TaskAbortError } from '@reduxjs/toolkit'
+import { useDispatch } from 'react-redux'
+import { AppDispatch } from '../../store/store'
+import { addPost } from '../../store/PostSlice'
 type MyForm = {
     dates:{
       value:string
@@ -12,12 +18,19 @@ type MyForm = {
     },
 }
 function RightBar() {
+  const dispatch:AppDispatch = useDispatch()
+
   function GetValue(e:FormEvent){
     e.preventDefault()
     let target = e.target as typeof e.target & MyForm
-    console.log(target.dates.value);
-    console.log(target.title.value);
-    console.log(target.text.value);
+    const data = {
+      id:v4().toString(),
+      title:target.title.value,
+      date:target.dates.value,
+      text:target.text.value
+    }   
+    dispatch(addPost(data))
+
     
   }
   return (
